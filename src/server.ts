@@ -1,14 +1,12 @@
-const express = require('express');
+import 'reflect-metadata';
+import './database';
+import express from 'express';
+import router from './routes';
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Aqui estão os seus dados' });
-});
-
-app.post('/', (req, res) => {
-  res.json({ message: 'Criado com sucesso' });
-});
+app.use(express.json());
+app.use(router);
 
 const PORT = 3000;
 
