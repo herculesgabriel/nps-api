@@ -1,6 +1,6 @@
 import nodemailer, { Transporter } from 'nodemailer';
-import handlebars from 'handlebars';
 import { readFileSync } from 'fs';
+import handlebars from 'handlebars';
 
 interface MessageInfo {
   id: string;
@@ -45,7 +45,6 @@ class SendMailService {
     console.log('Message sent: %s', message.messageId);
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(message));
   }
-
 }
 
 export default new SendMailService();
